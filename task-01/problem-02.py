@@ -15,7 +15,7 @@ def word_frequency(words_list, path):
         with open(path, 'r', encoding='utf-8') as file:
             content = file.read()
     except FileNotFoundError:
-        return f"Error: File not found '{path}'"
+        return f"Error: Fichero no encontrado '{path}'"
 
     # 1.
     content = content.lower()
@@ -37,15 +37,16 @@ def word_frequency(words_list, path):
     return sorted_frequencies
 
 
-test_path = "sample_text.txt"
-with open(test_path, "w", encoding="utf-8") as f:
-    f.write("Hola, hola. Esto es un test. Primer test en Python. Python es un lenguaje de programación.")
+def main():
+    test_path = "sample_text.txt"
+    with open(test_path, "w", encoding="utf-8") as f:
+        f.write("Hello, hola. Esto es un test. Primer test en Python. Python es un lenguaje de programación.")
 
+    words = ["Hola", "Python", "test", "programación"]
 
-my_words = ["Hola", "Python", "test", "programación"]
+    result = word_frequency(words, test_path)
 
+    print("Diccionario:")
+    print(result)
 
-result = word_frequency(my_words, test_path)
-
-print("Sorted frequencies:")
-print(result)
+main()

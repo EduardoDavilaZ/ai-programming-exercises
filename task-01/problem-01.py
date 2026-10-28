@@ -17,5 +17,9 @@ def processNumbers(numbers):
     result.sort()
     return result
 
-mi_lista = [4, -1, 2, 4, 3, -5, 2]
-print(processNumbers(mi_lista))
+def main():
+    list = [4, -1, 2, 4, 3, -5, 2]
+    print(processNumbers(list))
+
+main()
+
